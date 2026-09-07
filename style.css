@@ -510,12 +510,20 @@
   }
   .contact-line:last-child{ border-bottom: none; }
   .contact-line:hover{ background: rgba(79,193,184,0.10); }
-  .contact-label{
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--sand);
-    width: 70px;
+  .contact-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(79,193,184,0.12);
+    color: var(--teal);
+  }
+  .contact-icon svg{
+    width: 19px;
+    height: 19px;
   }
   .contact-value{
     font-family: var(--font-mono);
