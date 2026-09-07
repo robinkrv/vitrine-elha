@@ -74,7 +74,7 @@
   .header-inner{
     max-width: var(--container);
     margin: 0 auto;
-    padding: 18px 32px;
+    padding: 13px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -384,17 +384,34 @@
   /* ==========================================================
      Références
      ========================================================== */
-  .references{ background: var(--paper); color: var(--ink); }
-  .references .section-title{ color: var(--ink); }
-  .references .section-lead{ color: var(--ink-soft); }
-  .references .section-eyebrow{ color: var(--teal-dim); }
+  .references{ background: var(--void-raised); position: relative; overflow: hidden; }
+  .references::before{
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(79,193,184,0.14), transparent 68%);
+    pointer-events: none;
+  }
   .reference-card{
+    position: relative;
     margin-top: 52px;
-    background: var(--card-on-paper);
-    border: 1px solid rgba(18,20,26,0.07);
-    border-radius: 18px;
-    padding: 44px;
-    box-shadow: 0 12px 32px rgba(23,26,34,0.06);
+    background: linear-gradient(160deg, #1b2140 0%, var(--void) 100%);
+    border: 1px solid rgba(79,193,184,0.22);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    overflow: hidden;
+  }
+  .reference-card::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--sand));
   }
   .reference-card-head{
     display: flex;
@@ -406,7 +423,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: color-mix(in srgb, var(--ink) 80%, var(--paper) 20%);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14);
     border-radius: 14px;
     padding: 11px 20px;
     flex-shrink: 0;
@@ -416,29 +434,29 @@
     width: auto;
     display: block;
   }
-  .reference-card-head h3{ color: var(--ink); font-size: 21px; }
+  .reference-card-head h3{ font-size: 22px; }
   .reference-sub{
     margin-top: 4px;
     font-size: 13.5px;
-    color: var(--ink-soft);
+    color: var(--off-white-dim);
   }
   .reference-body{
-    color: var(--ink-soft);
+    color: var(--off-white-dim);
     font-size: 15.5px;
     max-width: 640px;
   }
   .reference-note{
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(18,20,26,0.08);
+    border-top: 1px solid var(--void-line);
     font-size: 13.5px;
-    color: var(--ink-soft);
+    color: var(--off-white-dim);
     font-style: italic;
   }
   .references-footnote{
     margin-top: 24px;
     font-size: 13.5px;
-    color: var(--ink-soft);
+    color: var(--off-white-dim);
   }
   
   /* ==========================================================
@@ -491,7 +509,7 @@
     transition: background 0.2s var(--ease);
   }
   .contact-line:last-child{ border-bottom: none; }
-  .contact-line:not(.contact-line-static):hover{ background: rgba(79,193,184,0.10); }
+  .contact-line:hover{ background: rgba(79,193,184,0.10); }
   .contact-label{
     font-family: var(--font-mono);
     font-size: 13px;
@@ -504,9 +522,6 @@
     font-size: 15px;
     color: #fff;
   }
-  .social-links{ display: flex; gap: 20px; }
-  .social-link{ color: #fff; }
-  .social-link:hover{ color: var(--teal); }
   
   /* ==========================================================
      Footer
