@@ -335,7 +335,11 @@
   /* ==========================================================
      Expertises
      ========================================================== */
-  .stack-section{ background: var(--void); }
+  .stack-section{
+    background:
+      radial-gradient(ellipse 700px 420px at 12% -10%, rgba(79,193,184,0.07), transparent 60%),
+      var(--void);
+  }
   .layer-cards{
     margin-top: 56px;
     display: grid;
@@ -347,11 +351,22 @@
     overflow: hidden;
   }
   .layer-card{
+    position: relative;
     background: var(--void);
-    padding: 36px 32px;
+    padding: 38px 32px 36px;
     transition: background 0.25s var(--ease);
   }
   .layer-card:hover{ background: var(--void-raised); }
+  .layer-card::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .layer-card:nth-child(1)::before{ background: var(--teal); }
+  .layer-card:nth-child(2)::before{ background: linear-gradient(90deg, var(--teal), color-mix(in srgb, var(--teal) 45%, var(--sand) 55%)); }
+  .layer-card:nth-child(3)::before{ background: linear-gradient(90deg, color-mix(in srgb, var(--teal) 45%, var(--sand) 55%), var(--sand)); }
+  .layer-card:nth-child(4)::before{ background: var(--sand); }
   .layer-card-index{
     font-family: var(--font-mono);
     font-size: 12px;
@@ -462,7 +477,11 @@
   /* ==========================================================
      Formations
      ========================================================== */
-  .formations{ background: var(--void); }
+  .formations{
+    background:
+      radial-gradient(ellipse 700px 420px at 88% -10%, rgba(227,185,138,0.09), transparent 60%),
+      var(--void);
+  }
   .formation-grid{
     margin-top: 52px;
     display: grid;
@@ -471,7 +490,7 @@
     margin-bottom: 48px;
   }
   .formation-item{
-    border-left: 2px solid var(--teal);
+    border-left: 2px solid var(--sand);
     padding-left: 20px;
   }
   .formation-tag{
@@ -493,7 +512,13 @@
   /* ==========================================================
      Contact
      ========================================================== */
-  .contact{ background: var(--void-raised); border-top: 1px solid var(--void-line); }
+  .contact{
+    background:
+      radial-gradient(ellipse 500px 320px at 0% 0%, rgba(79,193,184,0.08), transparent 60%),
+      radial-gradient(ellipse 500px 320px at 100% 100%, rgba(227,185,138,0.08), transparent 60%),
+      var(--void-raised);
+    border-top: 1px solid var(--void-line);
+  }
   .contact-panel{
     margin-top: 48px;
     border: 1px solid var(--void-line);
