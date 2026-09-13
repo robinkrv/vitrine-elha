@@ -51,4 +51,16 @@
       }, 150);
     });
   }
+  // Dynamic header color — tracks which section is currently in view
+  const trackedSections = document.querySelectorAll('main > section[id]');
+  if ('IntersectionObserver' in window && trackedSections.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.body.setAttribute('data-section', entry.target.id);
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    trackedSections.forEach(section => sectionObserver.observe(section));
+  }
 })();
