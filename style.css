@@ -337,8 +337,8 @@
      ========================================================== */
   .stack-section{
     background:
-      radial-gradient(ellipse 700px 420px at 12% -10%, rgba(79,193,184,0.07), transparent 60%),
-      var(--void);
+      radial-gradient(ellipse 800px 460px at 15% -10%, rgba(79,193,184,0.10), transparent 62%),
+      #16302F;
   }
   .layer-cards{
     margin-top: 56px;
@@ -352,11 +352,11 @@
   }
   .layer-card{
     position: relative;
-    background: var(--void);
+    background: #16302F;
     padding: 38px 32px 36px;
     transition: background 0.25s var(--ease);
   }
-  .layer-card:hover{ background: var(--void-raised); }
+  .layer-card:hover{ background: #1C3B39; }
   .layer-card::before{
     content: "";
     position: absolute;
@@ -399,7 +399,7 @@
   /* ==========================================================
      Références
      ========================================================== */
-  .references{ background: var(--void-raised); position: relative; overflow: hidden; }
+  .references{ background: #1A1B3A; position: relative; overflow: hidden; }
   .references::before{
     content: "";
     position: absolute;
@@ -479,8 +479,8 @@
      ========================================================== */
   .formations{
     background:
-      radial-gradient(ellipse 700px 420px at 88% -10%, rgba(227,185,138,0.09), transparent 60%),
-      var(--void);
+      radial-gradient(ellipse 800px 460px at 85% -10%, rgba(227,185,138,0.12), transparent 62%),
+      #2A2117;
   }
   .formation-grid{
     margin-top: 52px;
@@ -490,8 +490,10 @@
     margin-bottom: 48px;
   }
   .formation-item{
-    border-left: 2px solid var(--sand);
-    padding-left: 20px;
+    background: rgba(227,185,138,0.07);
+    border: 1px solid rgba(227,185,138,0.22);
+    border-radius: 16px;
+    padding: 24px 22px;
   }
   .formation-tag{
     display: block;
