@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://robinkrv.github.io/vitrine-elha/sitemap.xml
